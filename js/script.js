@@ -60,6 +60,10 @@ $(document).ready(function() {
         var item = template.clone();
         item.find(".text").text(toDo.text);
 
+        if(toDo.completed) {
+            item.find(".text").addClass("completed");
+        }
+
         //aggiunta alla lista
         list.append(item);
     }
@@ -90,6 +94,12 @@ $(document).ready(function() {
     //RIMOZIONE TO DO ITEM
     $("body").on("click", ".todos li i", function(){
         $(this).parent().remove();
+    });
+
+
+    // Todo/Completed
+    $("body").on("click", ".todos li span", function() {
+        $(this).toggleClass("completed");
 
     });
 
