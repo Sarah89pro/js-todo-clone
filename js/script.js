@@ -65,7 +65,33 @@ $(document).ready(function() {
     }
 
     //INSERIMENTO NUOVO ELEMENTO
-    
+    newInput.keyup(function(event) {
+        console.log(event.which);
+
+        if(event.which ===13) { //code enter key
+            var text =newInput.val().trim();
+
+            if(text !== "") {
+                console.log(text);
+
+                //Template
+                var item = template.clone();
+                item.find(".text").text(text);
+
+                //Aggiunta alla lista
+                list.append(item);
+
+                //reset
+                newInput.val("");
+            }
+        }
+    });
+
+    //RIMOZIONE TO DO ITEM
+    $("body").on("click", ".todos li i", function(){
+        $(this).parent().remove();
+
+    });
 
 
     //end doc ready
