@@ -52,7 +52,7 @@ $(document).ready(function() {
     var newInput= $(".add-todo");
     var template= $("#template li");
 
-    //popolazione to do list
+    //POPOLAZIONE TO DO LIST
     for (var i = 0; i < toDoItems.length; i++) {
         var toDo = toDoItems[i];
 
@@ -63,6 +63,10 @@ $(document).ready(function() {
         //aggiunta alla lista
         list.append(item);
     }
+
+    //INSERIMENTO NUOVO ELEMENTO
+    
+
 
     //end doc ready
 });
